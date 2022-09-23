@@ -1,4 +1,5 @@
-<?php
+<?php       
+            #Задание 3 
             $name = readline("Как Вас зовут?\n");
             $task1 = readline("Какая задача стоит перед вами сегодня?\n");
             $task1Duration = readline("Сколько примерно часов эта задача займет?\n");
@@ -11,4 +12,5 @@
             echo "- ".$task2."(".$task2Duration."ч)\n";
             echo "- ".$task3."(".$task3Duration."ч)\n";
            
+            
 ?>
