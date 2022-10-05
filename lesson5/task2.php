@@ -25,5 +25,9 @@ TaskService::addComment($user, $testTask, 'Первый нах!');
 TaskService::addComment($user, $testTask, 'Афтар жжет');
 TaskService::addComment($user, $testTask, 'Выпей йаду %username%');
 
-var_dump($testTask->getComments());
+foreach ($testTask->getComments() as $comment) {
+    
+    echo $testTask->getUser()->getUsername().' написал:  '.$comment->getText().PHP_EOL;
+}
+
 ?>
