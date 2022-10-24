@@ -1,5 +1,6 @@
 <?php
 class Task {
+    private int $taskId;
     private string $description;
     private DateTime $dateCreated;
     private DateTime $dateUpdated;
@@ -8,14 +9,16 @@ class Task {
     private bool $isDone = FALSE;
     private User $user; 
     public array $comments = []; 
-    function __construct(string $description, int $priority = 10, User $user ) 
-    {
+    function __construct(int $taskId, string $description, int $priority = 10, User $user ) 
+    {   $this->taskId = $taskId;
         $this->description = $description;
         $this->dateCreated = new DateTime();
         $this->dateUpdated = new DateTime();
         $this->dateDone = NULL;
         $this->priority = $priority;
         $this->user = $user;
+        $_COOKIE['task_count']++;
+
     }
     // Task getters 
     public function getDescription(): string {

@@ -13,6 +13,7 @@
    <?php else :?>
     <a href="?controller=security">Войти</a>
    <?php endif ?>
+   <?php
    
-
+    ?>
 </body>
