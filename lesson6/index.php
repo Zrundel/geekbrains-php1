@@ -10,5 +10,6 @@ $controller = $_GET['controller'] ?? 'home';
 $routes = require 'controller/routes.php';
 
 require_once $routes[$controller];
-
+// GitTest 
+var_dump($routes);
 ?>
