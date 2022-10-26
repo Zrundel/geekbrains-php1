@@ -3,13 +3,12 @@
 
 require_once 'Task.php'; // Обязательно подключаем наш класс-сущность
 
+
 class TaskProvider
 {
-   
-
    // Метод создания задачи
-   public function addTask(string $taskDesc, User $user): ?User
-   {
-       return new Task($taskDesc, 0, $user);
+   public function addTask(string $taskDesc, User $user): ?Task
+   {    
+        return new Task ($_COOKIE['task_count'], $taskDesc, 0, $user);
    }
 }

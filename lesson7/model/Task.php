@@ -1,26 +1,28 @@
 <?php
 class Task {
-    private int $taskId;
+    private int $id;
     private string $description;
-    private DateTime $dateCreated;
-    private DateTime $dateUpdated;
-    private ?DateTime $dateDone;
+    private string $dateCreated;
+    private string $dateUpdated;
+    private ?string $dateDone;
     private int $priority;
-    private bool $isDone = FALSE;
+    private int $isDone = 0;
     private User $user; 
     public array $comments = []; 
-    function __construct(int $taskId, string $description, int $priority = 10, User $user ) 
-    {   $this->taskId = $taskId;
+    function __construct(string $description, int $priority = 10, User $user ) 
+    {  
         $this->description = $description;
         $this->dateCreated = new DateTime();
         $this->dateUpdated = new DateTime();
         $this->dateDone = NULL;
         $this->priority = $priority;
         $this->user = $user;
-        $_COOKIE['task_count']++;
-
     }
     // Task getters 
+    public function getId(): int {
+        return $this->id;
+    }
+
     public function getDescription(): string {
         return $this->description ?? 'Task haven`t desctiption, please setDescription() to update';
     }

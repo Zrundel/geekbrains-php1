@@ -4,10 +4,11 @@
 </head>
 <body>
 <h1><?=$pageHeader?></h1>
-    <?session_start(); ?>
+   
 
    <?php if (isset($_SESSION['user'])) : ?>
-   <p>Рады вас приветствовать, <?=$_SESSION['user']->getUsername()?></p>
+   <p>Рады вас приветствовать, <?=$_SESSION['user']->getName()?></p>
+  <? // <?var_dump($_SESSION);?> 
    <a href="?controller=tasks">Посмотреть задачи</a>
    <a href="?action=logout">Выйти</a>
    <?php else :?>
